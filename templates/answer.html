@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="center">
+    {% if correct == 1 %}
+    <h1>
+        すごい　正解です
+    </h1>
+    <img src="/static/images/hakusyu.png">
+    {% else %}
+    <h1>
+        残念　不正解です
+    </h1>
+    <img src="/static/images/test_print_gakkari_schoolgirl.png">
+    {% endif %}
+
+    {% if prime == 1 %}
+    <h2>
+    {{q_num}}は素数でした
+    </h2>
+    {% else %}
+    <h2>
+    {{q_num}}は合成数でした
+    少なくとも{{divnum}}で割ることができます
+    </h2>
+    {% endif %} 
+    {% if is_final == 0 %}
+    <h3>
+        次の問題に行くには[次の問題]を押してください
+    </h3>
+    <form method="post" action="/question">
+        <input type="submit" value="次の問題">  
+    </form>
+    {% endif %}
+    {% if is_final == 1 %}
+    <h3>
+        次は結果発表です
+    </h3>
+    <form method="post" action="/final">
+        <input type="submit" value="結果発表">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="center">
+    <h1>
+        第{{index_num}}問<br>
+        {{q_num}}は素数か合成数か判定してください
+    </h1>
+    <form method="post" action="/answer">
+        <input type="radio" name="user_ans" value="素数" id="is_prime" required>
+        <label for="is_prime">素数　</label><br>
+
+        <input type="radio" name="user_ans" value="合成数" id="non_prime" required>
+        <label for="non_prime">合成数</label><br><br>
+        
+        <input type="submit" value="答え合わせ"> 
+    </form>
+</div>
+{% endblock %}

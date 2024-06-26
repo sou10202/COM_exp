@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="center">
+    <h1>
+        結果発表
+    </h1>
+    <h2>
+        あなたは{{req_num}}問中{{rate}}問正解しました
+        正答率は{{final_rate}}%です
+    </h2>
+        {% if rank == 0 %}
+        <img src="/static/images/rank_f.png">
+        <h2>
+        あなたのランクはEです<br>
+        素数判定の勉強を頑張りましょう
+        </h2>
+        {% endif %}
+        {% if rank == 20 %}
+        <img src="/static/images/rank_e.png">
+        <h2>
+        あなたのランクはDです<br>
+        もっと多くの素数を判定できるようにしましょう
+        </h2>
+        {% endif %}
+        {% if rank == 40 %}
+        <img src="/static/images/rank_d.png">
+        <h2>
+        あなたのランクはCです<br>
+        まあまあです,これからも精進しましょう
+        </h2>
+        {% endif %}
+        {% if rank == 60 %}
+        <img src="/static/images/rank_c.png">
+        <h2>
+        あなたのランクはBです<br>
+        そこそこです,あと少しの努力が必要です
+        </h2>
+        {% endif %}
+        {% if rank == 80 %}
+        <img src="/static/images/rank_b.png">
+        <h2>
+        あなたのランクはAです<br>
+        あと1問でパーフェクトです!1問1問丁寧に考えましょう
+        </h2>
+        {% endif %}
+        {% if rank == 100 %}
+        <img src="/static/images/rank_s.png">
+        <h2>
+        あなたのランクはSです<br>
+        完璧です！！あなたは素数マスターです！！
+        </h2>
+        {% endif %}
+    <button onclick="location.href='./'">始めに戻る</button>
+</div>
+{% endblock %}

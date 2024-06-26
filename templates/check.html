@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="center">
+    <h1>
+        {{level}} を {{req_num}}問 出題します
+    </h1>
+    <form method="post" action="/question">
+        <input type="submit" value="問題へ進む">
+    </form>
+    <button onclick="location.href='./'">設定へ戻る</button>
+</div>
+{% endblock %}
